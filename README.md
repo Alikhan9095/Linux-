@@ -15,11 +15,27 @@
      5. `ls -ltr` Lists files sorted by modification time, oldest first, in long format.
      6. `ls -R /path` Recursively lists all files and directories starting from /path.
         
-> example
+> Example
        
        $ ls -lh /home/user: Lists files in /home/user with detailed information and human-readable file sizes.
        $ ls -aR: Lists all files, including hidden ones, recursively in all subdirectories.
        
   
-- `cat` command in Linux is used to concatenate and display the contents of files
+- `cat` command in Linux is used to concatenate and display the contents of files.
+     1. `cat filename` Displays the contents of the specified file.
+     2.  `cat > filename` Creates a new file (or overwrites an existing file) and allows you to input text into it. Press Ctrl + D to save and exit.
+     3.   `cat >> filename` Appends text to an existing file. Press Ctrl + D to save and exit.
+     4.   `cat file1 file2 > newfile`  the contents of file1 and file2 and writes them to newfile created.
+     5.   `cat -n filename` Displays the contents of the file with line numbers.
+     6.   `cat -b filename` Similar to -n, but only numbers non-blank lines.
+     7.   `cat [filename] | grep [pattern` Searches for a pattern in the file and displays matching lines.
+
+> Example..
+
+   $ cat file : View the contents of a file
+   $ cat > file : eate a new file
+   $ cat part1.txt part2.txt > combined.txt : create a new file and copy multiple files's contents in new file
+   $ cat >> log.txt : Append(write in a file without using editor) to an existing file 
+   $ cat /etc/passwd | grep username : Displays the contents of the /etc/passwd file, which contains user account information.
+  
   
