@@ -31,7 +31,7 @@
      7.   `cat [filename] | grep [pattern` Searches for a pattern in the file and displays matching lines.
 
 > Example..
-
+```
    $ cat file : View the contents of a file
    $ cat > file : eate a new file
    $ cat part1.txt part2.txt > combined.txt : create a new file and copy multiple files's contents in new file
