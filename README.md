@@ -13,7 +13,7 @@
      4. `ls -lah` Lists all files in long format with human-readable file sizes.
      5. `ls -ltr` Lists files sorted by modification time, oldest first, in long format.
      6. `ls -R /path` Recursively lists all files and directories starting from /path.
-## example..
+** example..**
        
        $ ls -lh /home/user: Lists files in /home/user with detailed information and human-readable file sizes.
        $ ls -aR: Lists all files, including hidden ones, recursively in all subdirectories.
