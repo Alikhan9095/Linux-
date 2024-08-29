@@ -1,4 +1,4 @@
-# Linux basic and essential useful commands
+    # Linux basic and essential useful commands
 
 1.sudo'is a command that lets a user run commands with superuser or root privileges, allowing them to perform administrative tasks on the system.
 
