@@ -44,7 +44,7 @@
 
 ## **Less cammand**
 
-- `less` command in Linux is a powerful utility for viewing the contents of a file one screen at a time. It’s particularly useful for reading large files because it doesn't load the entire file into memory, making it faster and more efficient than cat or more for this purpose.
+- `less` command in Linux is a powerful utility for viewing the contents of a file one screen at a time. It’s particularly useful for reading large files because it doesn't load the entire file into memory, making it faster and more efficient than **cat or more** for this purpose.
 - `less [filename]` Opens the specified file in the less viewer.
 - `less file1.txt file2.txt` Open Multiple Files.
 
