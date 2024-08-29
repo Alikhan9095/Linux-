@@ -31,7 +31,7 @@
      4.   `cat file1 file2 > newfile`  the contents of file1 and file2 and writes them to newfile created.
      5.   `cat -n filename` Displays the contents of the file with line numbers.
      6.   `cat -b filename` Similar to -n, but only numbers non-blank lines.
-     7.   `cat [filename] | grep [pattern` Searches for a pattern in the file and displays matching lines.
+     7.   `cat [filename] | grep [pattern]` Searches for a pattern in the file and displays matching lines.
 
 > Example..
 ```
