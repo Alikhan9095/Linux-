@@ -7,7 +7,7 @@
 - `cd` cammand to use for chnage the directory.
      1. `cd` go to your home direcoty.
      2. `cd ..` go to back one directory
--  `main 'command name'` to use for manual or see about the cammnad such as flag, operator use and more details
+-  `man 'command name'` to use for manual or see about the cammnad such as flag, operator use and more details
 -  `ls` Lists the files and directories in the current directory.  and it's very usfull with diffirents flags such as below.
 -  `ls 'directory pat'` list the directory/file in specfied directory
      1. `ls -ls` or `ls -l` list the directory/files with more details such as permissions,link,ownership,filetyps,fielsize,modification date etc
