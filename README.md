@@ -37,5 +37,6 @@
    $ cat part1.txt part2.txt > combined.txt : create a new file and copy multiple files's contents in new file
    $ cat >> log.txt : Append(write in a file without using editor) to an existing file 
    $ cat /etc/passwd | grep username : Displays the contents of the /etc/passwd file, which contains user account information.
+```
   
   
