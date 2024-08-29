@@ -1,4 +1,4 @@
-# **Linux basic commands**
+ **Linux basic commands**
 ----------------------------------------------------------
 - `sudo` is a command that lets a user run commands with superuser or root privileges, allowing them to perform administrative tasks on the system.
 - `sudo -i` or `su` cammand allow you to switch a normal user to a super user or root user.
