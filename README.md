@@ -18,5 +18,5 @@
         $ ls -lh /home/user: Lists files in /home/user with detailed information and human-readable file sizes.
         $ ls -aR: Lists all files, including hidden ones, recursively in all subdirectories.
   ```
-- 'cat' command in Linux is used to concatenate and display the contents of files
+- `cat` command in Linux is used to concatenate and display the contents of files
   
