@@ -7,7 +7,8 @@
 - `cd` cammand to use for chnage the directory.
      1. `cd` go to your home direcoty.
      2. `cd ..` go to back one directory
--  `man 'command name'` to use for manual or see about the cammnad such as flag, operator use and more details
+-  `man 'command'  in Linux is used to display the manual pages of other commands and programs. It provides detailed information about how a command works, its 
+      options, usage examples, and other relevant details. It is an essential tool for anyone looking to understand how to use a particular command or utility in Linux.
 -  `ls` Lists the files and directories in the current directory.  and it's very usfull with diffirents flags such as below.
 -  `ls 'directory pat'` list the directory/file in specfied directory
      1. `ls -ls` or `ls -l` list the directory/files with more details such as permissions,link,ownership,filetyps,fielsize,modification date etc
