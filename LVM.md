@@ -1,2 +1,2 @@
-# Logicak volume Manager
+# LogicaL volume Manager
 ---------
