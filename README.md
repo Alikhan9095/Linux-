@@ -7,6 +7,7 @@
 - `cd` cammand to use for chnage the directory.
      1. `cd` go to your home direcoty.
      2. `cd ..` go to back one directory
+- `tree` command in Linux is used to display a directory structure in a tree-like format
 -  `man command`  in Linux is used to display the manual pages of other commands and programs. It provides detailed information about how a command works, its 
       options, usage examples, and other relevant details. It is an essential tool for anyone looking to understand how to use a particular command or utility in Linux.
 -  `ls` Lists the files and directories in the current directory.  and it's very usfull with diffirents flags such as below.
@@ -205,7 +206,40 @@ $ Disable line wrapping: less -S longfile.txt
 ## mv Command (Move/Rename)
 
 - `mv`command is used to move files and directories from one location to another. It can also be used to rename files and directories.
-   1. 
+  1. `mv [source] [destination]` Moves or renames the file or directory
+  2. `mv -i [source] [destination]` Prompts for confirmation before overwriting any files at the destination.
+  3. `mv -v [source] [destination]` Displays the files being moved or renamed.
+  4. `mv -n [source] [destination]` Prevents overwriting files at the destination.
+  5. `mv oldname.txt newname.txt` Rename a file
+  6. `mv olddir newdir` Rename a directory
+  7. `mv /home/user/docs /backup/` Move a directory to another location
+  8. `mv file1.txt file2.txt /home/user/` Move multiple files to a directory
+
+> Example
+  ```
+$ mv file.txt /home/user/, Move a File
+$ mv oldname.txt newname.txt, Rename a File
+$ mv /home/user/docs /backup/, Move a Directory
+$ mv -i important.doc /backup/, Move with Confirmation Before Overwriting
+  ```
+
+**Practical Uses:**
+-  Backups: Use cp -r to back up entire directories.
+-  Organizing Files: Use mv to organize files into appropriate directories.
+-  Batch Renaming: Use mv to rename multiple files with a script.
+
+
+## ****
+
+
+
+
+
+     
+
+
+
+   
 
 
   
