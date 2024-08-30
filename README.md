@@ -3,6 +3,10 @@
 
 - `sudo` is a command that lets a user run commands with superuser or root privileges, allowing them to perform administrative tasks on the system.
 - `sudo -i` or `su` cammand allow you to switch a normal user to a super user or root user.
+- `whoami` command displays the username of the currently logged-in user.
+- `who` Lists all users currently logged into the system.
+- `w or who am i` Provides detailed information about users and their activities or Shows information about the current terminal session
+- `id` Displays the current user's UID, GID, and group memberships.
 - `pwd` cammand  to check current working directory
 - `cd` cammand to use for chnage the directory.
      1. `cd` go to your home direcoty.
@@ -229,7 +233,47 @@ $ mv -i important.doc /backup/, Move with Confirmation Before Overwriting
 -  Batch Renaming: Use mv to rename multiple files with a script.
 
 
-## ****
+## **Memory and CPU usages**
+
+- `cat /proc/meminfo` file provides detailed information about your system's memory usage and about the system's RAM and swap memory.
+- `cat /proc/cpuinfo` Displays detailed information about each CPU core, including its vendor, model, frequency, cache size, and more.
+- `lscpu` command in Linux provides detailed information about the CPU architecture of the system, display CPU-related information such as the number of CPUs, threads, cores,etc.
+- `mpstat` command is part of the "sysstat" package and is used to report CPU statistics. It provides detailed information about the usage of each individual CPU or core in your system
+  1. `sudo apt-get install sysstat` Debian/Ubuntu
+  2. `sudo yum install sysstat` CentOS/RHEL
+- `nmon` is a performance monitoring tool that provides real-time CPU, memory, disk, and network usage.
+- `iostat` command provides CPU and I/O statistics.
+- `uptime` command in Linux is used to find out how long the system has been running since the last reboot. It also provides information about the current time, the number of users 
+          currently logged in, and the system load averages for the past 1, 5, and 15 minutes.
+
+  ## **How to check kernel**
+
+  - `uname -r` command  display the kernel version
+  - `hostnamectl` If you are using a systemd-based distribution, you can use hostnamectl to get the kernel version along with other system information.
+  - `cat /proc/version` This command will display detailed information about the kernel version and some additional information, including the compiler used.
+  - `dmesg | grep "Linux version"` command to filter out kernel version information
+ 
+## **free cammand**
+
+- `free` command in Linux is used to display information about the system's memory usage, including both physical and swap memory. It provides a snapshot of how much memory is being 
+          used, how much is free, and other memory-related statistics.
+    1. `free -h` Displays the output in a human-readable format (e.g., MB or GB)
+    2. `free -s (specify time )`  Continuously display memory usage every specified number of seconds.
+
+  > Exmaple
+   ```
+  $ free -s 5 This command will update the memory usage information every 5 seconds.
+   ```
+
+**Practical Use** 
+-  `Monitor Memory Usage` Helps in checking the overall memory usage and diagnosing memory-related issues.
+-  `Performance Tuning` Useful for performance tuning by understanding how much memory is being used by the system and applications.
+  
+
+    
+     
+
+     
 
 
 
