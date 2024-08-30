@@ -246,7 +246,7 @@ $ mv -i important.doc /backup/, Move with Confirmation Before Overwriting
 - `uptime` command in Linux is used to find out how long the system has been running since the last reboot. It also provides information about the current time, the number of users 
           currently logged in, and the system load averages for the past 1, 5, and 15 minutes.
 
-  ## **How to check kernel**
+  ## **How to check kernel version**
 
   - `uname -r` command  display the kernel version
   - `hostnamectl` If you are using a systemd-based distribution, you can use hostnamectl to get the kernel version along with other system information.
