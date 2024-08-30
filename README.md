@@ -23,7 +23,7 @@
        $ ls -lh /home/user: Lists files in /home/user with detailed information and human-readable file sizes.
        $ ls -aR: Lists all files, including hidden ones, recursively in all subdirectories.
        
- ## **cat cammand**
+ ## cat cammand
 - `cat` command in Linux is used to concatenate and display the contents of files.
      1. `cat filename` Displays the contents of the specified file.
      2.  `cat > filename` Creates a new file (or overwrites an existing file) and allows you to input text into it. Press Ctrl + D to save and exit.
@@ -42,7 +42,7 @@
    $ cat /etc/passwd | grep username : Displays the contents of the /etc/passwd file, which contains user account information.
 ```
 
-## **Less cammand**
+## Less cammand
 
 - `less` command in Linux is a powerful utility for viewing the contents of a file one screen at a time. It’s particularly useful for reading large files because it doesn't load the entire file into memory, making it faster and more efficient than **cat or more** for this purpose.
 - `less [filename]` Opens the specified file in the less viewer.
@@ -61,7 +61,7 @@
     8. Search Backward: ?search_term (press n to go to the previous occurrence)
     9. Exit less: `q`
 
-> Common Options:
+ > Common Options:
 
 - `less -N [filename]` Displays line numbers alongside the file content.
 - `less +[number] [filename]` Starts displaying the file from a specific line number.
@@ -70,15 +70,15 @@
 - `less -R [filename]` Displays raw control characters, useful for viewing files with colored output.
 - `less /[search_term] [filename]` Opens the file and immediately searches for the specified term.
 
- > Example..
-```
+> Example..
+  ```
 $ less /var/log/syslog View a file
 $ Search for a term in the file: /error
 $ Display with line numbers: less -N script.sh
 $ Disable line wrapping: less -S longfile.txt
-```
+ ```
 
-## **more cammand**
+## more cammand
 
 - `more` command in Linux is used to view the contents of a file one screen at a time, similar to less. However, more has fewer features and is less flexible than less. It's primarily used for viewing text files and allows basic navigation through the content.
    1. `more [filename]` Opens the specified file in the more viewer
@@ -88,8 +88,8 @@ $ Disable line wrapping: less -S longfile.txt
    5. `more -s [filename]` Squeezes multiple consecutive blank lines into a single blank line.
 
 
-   > **Example**
-```
+> Example
+  ```
      $ more /etc/passwd  View a file
      $ more +50 file.txt,  Start viewing from a specific line
      $ more -c largefile.txt,  View a file with clear screen pages:
@@ -102,7 +102,7 @@ $ Disable line wrapping: less -S longfile.txt
    - `less` More advanced, supports both forward and backward navigation, better for large files.
 
 
-     ## **touch cammand (make a empty file)**
+     ## touch cammand (make a empty file)
 
      - `touch` command in Linux is primarily used to create empty files or update the timestamp of existing files without modifying their content. It’s a simple yet essential command 
                for file management in the Linux environment. 
@@ -116,66 +116,68 @@ $ Disable line wrapping: less -S longfile.txt
             
 
 > Examples:
-     ```bash
+  ```
       $ touch newfile.txt, Create an empty file
       $ touch file1.txt file2.txt file3.txt, Create multiple files
       $ touch -a document.txt, Update only the access time
       $ touch -m report.txt, Update only the modification time
       $ touch -t 202401010000.00 newyear.txt, Set a specific timestamp
       $ touch -r oldfile.txt newfile.txt, Copy the timestamp from another file
-     ```
+  ```
 
-     ## **mkdir cammand (make a directory)**
+## mkdir cammand (make a directory)
 
-     - `mkdir` command in Linux is used to create directories. It allows you to create single or multiple directories at once, and you can specify the permissions and parent directories 
+- `mkdir` command in Linux is used to create directories. It allows you to create single or multiple directories at once, and you can specify the permissions and parent directories 
               if they don't already exist.
-          1. `mkdir [directory_name]` Creates a new directory with the specified name.
-          2. `mkdir -p [directory_path]` Creates a directory along with any necessary parent directories that don't already exist.
-          3. `mkdir -m [mode] [directory_name]` Sets the permissions of the directory at the time of creation.
-          4. `mkdir -v [directory_name]` Displays a message for each directory that is created.
+  1. `mkdir [directory_name]` Creates a new directory with the specified name.
+  2. `mkdir -p [directory_path]` Creates a directory along with any necessary parent directories that don't already exist.
+  3. `mkdir -m [mode] [directory_name]` Sets the permissions of the directory at the time of creation.
+  4. `mkdir -v [directory_name]` Displays a message for each directory that is created.
 
 
-> **Exmapl**
-     ```
+> Exmapl
+
+   ```
          $  mkdir directoryname, Create a single directory:
          $ mkdir folder1 folder2 folder3, Create multiple directories at once
          $ mkdir -p /home/user/docs/2024/january, Create a directory with in a directory or under specific directory or create subdirectory in parents directory, if they don’t exist.
          $ mkdir -m 700 secure_folder, Create a directory with specific permissions  (only the owner can read, write, and execute)
          $ mkdir -v logs, Verbose output when creating a directory
          $ mkdir -p project/{src,bin,lib,docs}, creates a project directory with subdirectories src, bin, lib, and docs
-         ```
+   ```
 
-         ## **Delete or Remove file/Directory**
+## **Delete or Remove file/Directory**
 
-       - **Deleting Files with rm Command**
-          1. `rm [file_name]` Deletes the specified file.
-          2. `rm -i [file_name]` Prompts for confirmation before deleting the file.
-          3. `rm -f [file_name]` Forces the deletion of a file without asking for confirmation (useful for deleting files without write permissions).
-          4. `rm -v [file_name]` Displays a message for each file that is deleted.
-          5. `rm *.txt` Deletes all files with a specific pattern. For example, this command deletes all .txt files in the current directory.
+- **Deleting Files with rm Command**
+  1. `rm [file_name]` Deletes the specified file.
+  2. `rm -i [file_name]` Prompts for confirmation before deleting the file.
+  3. `rm -f [file_name]` Forces the deletion of a file without asking for confirmation (useful for deleting files without write permissions).
+  4. `rm -v [file_name]` Displays a message for each file that is deleted.
+  5. `rm *.txt` Deletes all files with a specific pattern. For example, this command deletes all .txt files in the current directory.
 
-        - **Deleting Directories**
-           1. `rmdir [directory_name]` Deletes an empty directory.
-           2. `rm -r [directory_name]` Recursively deletes a directory and all its contents, including subdirectories and files.
+- **Deleting Directories**
+  1. `rmdir [directory_name]` Deletes an empty directory.
+  2. `rm -r [directory_name]` Recursively deletes a directory and all its contents, including subdirectories and files.
 
-         - **Common Options with `rm -r`**
-            1. `rm -rf [directory_name]` Forces the deletion of a directory and its contents without prompting for confirmation. This is a powerful command that should be used with 
+- **Common Options with `rm -r`**
+  1. `rm -rf [directory_name]` Forces the deletion of a directory and its contents without prompting for confirmation. This is a powerful command that should be used with 
                                          caution.
-             2. `rm -rv [directory_name]` Recursively deletes the directory and its contents, displaying each action.
+  2. `rm -rv [directory_name]` Recursively deletes the directory and its contents, displaying each action.
 
-> **Examples**
-        ```
+> Examples
+
+  ```
         $ rm notes.txt, Delete a Single File:
         $ rm file1.txt file2.txt, Delete Multiple Files
         $ rm *.bak (deletes all .bak files), Delete All Files Matching a Pattern
         $ rmdir old_directory, Delete an Empty Directory:
         $ rm -r project_backup, Delete a Directory and Its Contents
         $rm -rf temp_directory, Force Delete a Directory Without Prompting
-        ```
+  ```
 
-        **Important Notes**
-       - Use with Caution: Commands like rm -rf are very powerful and can lead to accidental data loss if used carelessly. Always double-check the command and paths before execution.
-       - Confirm Deletion: The -i option can help prevent accidental deletions by asking for confirmation.
+**Important Notes**
+- Use with Caution: Commands like rm -rf are very powerful and can lead to accidental data loss if used carelessly. Always double-check the command and paths before execution.
+- Confirm Deletion: The -i option can help prevent accidental deletions by asking for confirmation.
         
       
 
