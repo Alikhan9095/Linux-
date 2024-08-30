@@ -268,7 +268,57 @@ $ mv -i important.doc /backup/, Move with Confirmation Before Overwriting
 **Practical Use** 
 -  `Monitor Memory Usage` Helps in checking the overall memory usage and diagnosing memory-related issues.
 -  `Performance Tuning` Useful for performance tuning by understanding how much memory is being used by the system and applications.
+
+## **top and htop cammands**
+
+****top Cammand****
+-  `top` command in Linux is a powerful utility for monitoring system performance and resource usage in real-time. It provides a dynamic, real-time view of system processes and their 
+      resource consumption such as memory, cpu, Current Time,System Uptime,Number of Users login,Load Average,task et
+  1. `Tasks` Total number of tasks (processes), and their states (running, sleeping, stopped, zombie).
+  2. `Memory Usage` KiB Mem: Displays memory usage including total, free, used, and buffer/cache
+       1. KiB Swap: Displays swap space usage including total, free, and used.
+
+  3. `CPU Usage` Shows the percentage of CPU usage, broken down into user space (us), system space (sy), nice (user-space processes with a modified priority, ni), idle (id), waiting 
+                 (wa), hardware interrupts (hi), software interrupts (si), and steal time (st).
+         
+**Common Commands and Keybindings in `top`**
+```
+q: Quit top.
+h: Display help information.
+P: Sort processes by CPU usage.
+M: Sort processes by memory usage.
+T: Sort processes by runtime.
+k: Kill a process by PID (prompts for the PID).
+r: Renice a process (change its priority, prompts for PID and new priority value).
+top -d <seconds> Change the refresh interval (in seconds) to update the displa
+top -u <username> Display processes for a specific user.
+```
+**example**
+```
+$ top -d 5 This command refreshes the top display every 5 seconds.
+```
+
+****htop Cammand****
+- `htop` is an interactive process viewer for Unix systems, similar to top but with a more user-friendly and visually appealing interface. It provides a real-time, color-coded display 
+         of system processes and resource usage. 
+**Features and Keybindings**
   
+- `Process Information` Provides detailed information about each process, including PID, user, priority, memory usage, and CPU usage.
+- `Color Coding` Uses colors to indicate different levels of CPU and memory usage, making it easier to interpret.
+- `Resource Meters` Displays CPU, memory, and swap usage in graphical bars at the top of the screen.
+
+  **dvanced Usage**
+  + `htop -u <username>` This command displays processes for a specific user.
+  + `htop -d <delay> -u <username>` This command runs htop with a spevify time of second update delay and filters processes by the specified user.
+
+  **Example**
+  ```
+  $ htop -d 5 -u username This command runs htop with a 5-second update delay and filters processes by the specified user.
+  ```
+ 
+
+
+
 
     
      
