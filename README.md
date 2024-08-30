@@ -178,7 +178,37 @@ $ Disable line wrapping: less -S longfile.txt
 **Important Notes**
 - Use with Caution: Commands like rm -rf are very powerful and can lead to accidental data loss if used carelessly. Always double-check the command and paths before execution.
 - Confirm Deletion: The -i option can help prevent accidental deletions by asking for confirmation.
-        
+
+
+## CP cammand
+
+- `cp` command allows you to copy files and directories from one location to another
+    1. `cp [source] [destination]` Copies the file from the source to the destination
+    2. `cp -r [source_directory] [destination]` Recursively copies an entire directory and its contents.
+    3. `cp -i [source] [destination]` Prompts for confirmation before overwriting any files at the destination.
+    4. `cp -v [source] [destination]` Displays the files being copied.
+    5. `cp -a [source_directory] [destination]` Archives the source directory, preserving the structure, attributes, and symbolic links.
+    6. `cp *` command is used to copy multiple files at once. The * is a wildcard that represents all files in the current directory.This command is handy when you want to copy all 
+           files (but not directories) from one location to another
+    7. `cp -r .* * /home/user/backup/` This command copies all files, including hidden ones, from the current directory to /home/user/backup/.
+ 
+> Exmapl
+  ```
+    $ cp file.txt /home/user/, Copy a File
+    $ cp file1.txt file2.txt /home/user/, Copy Multiple Files
+    $ cp -r /home/user/docs /backup/, Copy a Directory and Its Contents:
+    $ cp -i important.doc /backup/, Copy with Confirmation Before Overwriting
+    $  cp -r .* * /home/user/backup/` This command copies all files, including hidden ones from current directory
+    $ cp * /home/user/backup/,  This command copies all files,from current directory
+  ```
+
+## mv Command (Move/Rename)
+
+- `mv`command is used to move files and directories from one location to another. It can also be used to rename files and directories.
+   1. 
+
+
+  
       
 
                 
