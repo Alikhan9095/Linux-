@@ -2,13 +2,13 @@
 ----------------------------------------------------------
 
 - `sudo` is a command that lets a user run commands with superuser or root privileges, allowing them to perform administrative tasks on the system.
-- `sudo -i` or `su` cammand allow you to switch a normal user to a super user or root user.
+- `sudo -i` or `su` command allow you to switch a normal user to a super user or root user.
 - `whoami` command displays the username of the currently logged-in user.
 - `who` Lists all users currently logged into the system.
 - `w or who am i` Provides detailed information about users and their activities or Shows information about the current terminal session
 - `id` Displays the current user's UID, GID, and group memberships.
-- `pwd` cammand  to check current working directory
-- `cd` cammand to use for chnage the directory.
+- `pwd` command  to check current working directory
+- `cd` command to use for chnage the directory.
      1. `cd` go to your home direcoty.
      2. `cd ..` go to back one directory
 - `tree` command in Linux is used to display a directory structure in a tree-like format
@@ -28,7 +28,7 @@
        $ ls -lh /home/user: Lists files in /home/user with detailed information and human-readable file sizes.
        $ ls -aR: Lists all files, including hidden ones, recursively in all subdirectories.
        
- ## cat cammand
+ ## cat command
 - `cat` command in Linux is used to concatenate and display the contents of files.
      1. `cat filename` Displays the contents of the specified file.
      2.  `cat > filename` Creates a new file (or overwrites an existing file) and allows you to input text into it. Press Ctrl + D to save and exit.
@@ -47,7 +47,7 @@
    $ cat /etc/passwd | grep username : Displays the contents of the /etc/passwd file, which contains user account information.
 ```
 
-## Less cammand
+## Less command
 
 - `less` command in Linux is a powerful utility for viewing the contents of a file one screen at a time. It’s particularly useful for reading large files because it doesn't load the entire file into memory, making it faster and more efficient than **cat or more** for this purpose.
 - `less [filename]` Opens the specified file in the less viewer.
@@ -83,7 +83,7 @@ $ Display with line numbers: less -N script.sh
 $ Disable line wrapping: less -S longfile.txt
  ```
 
-## more cammand
+## more command
 
 - `more` command in Linux is used to view the contents of a file one screen at a time, similar to less. However, more has fewer features and is less flexible than less. It's primarily used for viewing text files and allows basic navigation through the content.
    1. `more [filename]` Opens the specified file in the more viewer
@@ -107,7 +107,7 @@ $ Disable line wrapping: less -S longfile.txt
    - `less` More advanced, supports both forward and backward navigation, better for large files.
 
 
-     ## touch cammand (make a empty file)
+     ## touch command (make a empty file)
 
      - `touch` command in Linux is primarily used to create empty files or update the timestamp of existing files without modifying their content. It’s a simple yet essential command 
                for file management in the Linux environment. 
@@ -130,7 +130,7 @@ $ Disable line wrapping: less -S longfile.txt
       $ touch -r oldfile.txt newfile.txt, Copy the timestamp from another file
   ```
 
-## mkdir cammand (make a directory)
+## mkdir command (make a directory)
 
 - `mkdir` command in Linux is used to create directories. It allows you to create single or multiple directories at once, and you can specify the permissions and parent directories 
               if they don't already exist.
@@ -185,7 +185,7 @@ $ Disable line wrapping: less -S longfile.txt
 - Confirm Deletion: The -i option can help prevent accidental deletions by asking for confirmation.
 
 
-## CP cammand
+## CP command
 
 - `cp` command allows you to copy files and directories from one location to another
     1. `cp [source] [destination]` Copies the file from the source to the destination
@@ -253,7 +253,7 @@ $ mv -i important.doc /backup/, Move with Confirmation Before Overwriting
   - `cat /proc/version` This command will display detailed information about the kernel version and some additional information, including the compiler used.
   - `dmesg | grep "Linux version"` command to filter out kernel version information
  
-## **free cammand**
+## **free command**
 
 - `free` command in Linux is used to display information about the system's memory usage, including both physical and swap memory. It provides a snapshot of how much memory is being 
           used, how much is free, and other memory-related statistics.
@@ -269,9 +269,9 @@ $ mv -i important.doc /backup/, Move with Confirmation Before Overwriting
 -  `Monitor Memory Usage` Helps in checking the overall memory usage and diagnosing memory-related issues.
 -  `Performance Tuning` Useful for performance tuning by understanding how much memory is being used by the system and applications.
 
-## **top and htop cammands**
+## **top and htop commands**
 
-****top Cammand****
+****top Command****
 -  `top` command in Linux is a powerful utility for monitoring system performance and resource usage in real-time. It provides a dynamic, real-time view of system processes and their 
       resource consumption such as memory, cpu, Current Time,System Uptime,Number of Users login,Load Average,task et
   1. `Tasks` Total number of tasks (processes), and their states (running, sleeping, stopped, zombie).
@@ -298,7 +298,7 @@ top -u <username> Display processes for a specific user.
 $ top -d 5 This command refreshes the top display every 5 seconds.
 ```
 
-****htop Cammand****
+****htop Command****
 - `htop` is an interactive process viewer for Unix systems, similar to top but with a more user-friendly and visually appealing interface. It provides a real-time, color-coded display 
          of system processes and resource usage. 
 **Features and Keybindings**
@@ -316,7 +316,48 @@ $ top -d 5 This command refreshes the top display every 5 seconds.
   $ htop -d 5 -u username This command runs htop with a 5-second update delay and filters processes by the specified user.
   ```
  
+## **df and du commanda**
 
+-  The `df` and `du` commands in Linux are essential tools for monitoring disk space usage. While they serve similar purposes, they have different focuses and use cases.
+
+**df command**
+
+- `df` The command stands for "disk free" and displays information about the file system disk space usages, It provides an overview of available,used, total disk space on mounted 
+      filesystems. It help you ubderstand how much space is used and how much is available on each partition on file system.
+    1. `df -h` Displays the output in a human-readable format (e.g., KB, MB, GB).
+    2. `df -T`  Displays the type of each filesystem
+    3. 
+
+  ## init ?
+  - `init` is the traditional initialization system that is responsible for booting the system, managing services, and maintaining system states. It is the first process started by the 
+           kernel and has a `process ID (PID) of 1`.
+     1. System Initialization: It initializes the system, sets up the environment, and starts other essential processes.
+     2. Service Management: It manages and starts system services and processes according to the system’s runlevel.
+    
+  **Runlevels**
+  -  Runlevels define the state of the system (e.g., single-user mode, multi-user mode). Each runlevel corresponds to a different set of services and system states.
+  -  Common runlevels include:
+   1. 0: Halt (shutdown)
+   2. 1: Single-user mode (for maintenance)
+   3. 2-5: Multi-user modes (with or without GUI)
+   4  6: Reboot
+
+   - `/etc/init.d/` Directory containing scripts for starting and stopping services in the traditional SysV init system.
+   - `/etc/rc.d/ or /etc/rcX.d/` Directories containing symbolic links to the init scripts for each runlevel.
+
+     > Example
+  ```
+     init <runlevel> To change the system runlevel, use the init command followed by the desired runlevel:
+     $ init 3, This command changes the system to runlevel 3 (multi-user mode with networking).
+     $ init 6, This command reboots the system.
+     $ init 0, This command shuts down the system.
+  ```
+
+
+
+
+
+     
 
 
 
