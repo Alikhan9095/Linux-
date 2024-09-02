@@ -452,7 +452,7 @@ $ grep "[a-z]" file.txt, Search for lines containing a specific range of charact
 
 # **Topic list and link**
 -------------------------
-1. [File System, Type and File permission]()
+1. [File System, Type and File permission](https://github.com/Alikhan9095/Linux-/blob/main/File%20System%20%26%20Type%20and%20File%20Permission)
 2. [LVM](LVM.md)
 
 
