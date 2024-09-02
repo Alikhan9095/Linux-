@@ -397,7 +397,7 @@ $ grep "pattern$" file.txt, Search for lines ending with a pattern
 $ grep "[a-z]" file.txt, Search for lines containing a specific range of characters:
 ```
  
-****awk command****    
+2. ****awk command****    
 
 - `awk` command in Linux is a powerful text-processing tool used for pattern scanning and processing. It's particularly useful for extracting and manipulating data from text files and 
         streams.
@@ -411,7 +411,7 @@ $ grep "[a-z]" file.txt, Search for lines containing a specific range of charact
     - `awk -F, '{print $1, $3}' file.csv` Use a Different Field Separator, This specifies a comma as the field separator and prints the first and third columns from a CSV file.
     - `awk '/error/ {print $0}' /var/log/syslog`, Print Lines Matching a Pattern, This prints all lines containing the word "error" in the /var/log/syslog file.
 
-   ****find command****
+  3. ****find command****
 
   - `find` command in Linux is a powerful tool used for searching and locating files and directories within a directory hierarchy. It offers a wide range of options for specifying 
           criteria like name, size, modification time, permissions, and more.
@@ -419,7 +419,7 @@ $ grep "[a-z]" file.txt, Search for lines containing a specific range of charact
                       the behavior of the search. expression: Conditions to match files or directories. This can include name patterns, size conditions, time conditions, and more.
        - `find /path/to/search -name "filename"` This searches for a file named filename in /path/to/search. The search is case-sensitive.
 
- ****sort command****  
+4. ****sort command****  
  - `sort` command in Linux is used to sort lines of text files. It can sort data numerically, alphabetically, and in reverse order, among other options. The command is highly versatile 
          and can handle a wide range of sorting tasks
    - `sort [options] [file...]`, options: Flags that modify the behavior of the sort, file: The file(s) to sort. If no file is specified, sort reads from standard input.
@@ -429,23 +429,24 @@ $ grep "[a-z]" file.txt, Search for lines containing a specific range of charact
    - `sort -u file.txt` This sorts the lines and removes any duplicates, leaving only unique lines.
    - `sort -f file.txt` se-Insensitive, This sorts the lines without considering case differences (e.g., "apple" and "Apple" are treated the same).
 
-  ****head & tail commands****  
-  The `head` and `tail` commands in Linux are used to display the beginning and the end of a file, respectively. These commands are useful for quickly viewing the first or last few 
- lines of a file without opening the entire file.
+5. ****head & tail commands****  
+   The `head` and `tail` commands in Linux are used to display the beginning and the end of a file, respectively. These commands are useful for quickly viewing the first or last few 
+     lines of a file without opening the entire file.
 
-  **head command**
-  - `head` command outputs the first part of files. By default, it displays the first 10 lines of each file, used to quickly view the beginning.
-     - `head [options] [file...]` file: The file to display. If no file is specified, head reads from standard input
-     - `head file.txt` This displays the first 10 lines of file.txt.
-     - `head -n 20 file.txt` This displays the first 20 lines of file.txt.
+   **head command**
+     - `head` command outputs the first part of files. By default, it displays the first 10 lines of each file, used to quickly view the beginning.
+       - `head [options] [file...]` file: The file to display. If no file is specified, head reads from standard input
+       - `head file.txt` This displays the first 10 lines of file.txt.
+       - `head -n 20 file.txt` This displays the first 20 lines of file.txt.
 
- **tail command**
- - `tail` command outputs the last part of files. By default, it displays the last 10 lines of each file. and used for monitoring logs or checking the most recent additions to a file.
-    - `tail [options] [file...]` file: The file to display. If no file is specified, tail reads from standard input.
-    - `tail file.txt` This displays the last 10 lines of file.txt.
-    - `tail -n 15 file.txt` This displays the last 15 lines of file.txt.
-    - `tail -n 20 -f /var/log/syslog` Combine -f with -n to View Specific Lines and Follow, This displays the last 20 lines of the file and continues to follow it
-    - 
+   **tail command**
+     - `tail` command outputs the last part of files. By default, it displays the last 10 lines of each file. and used for monitoring logs or checking the most recent additions to a 
+        file.
+      - `tail [options] [file...]` file: The file to display. If no file is specified, tail reads from standard input.
+      - `tail file.txt` This displays the last 10 lines of file.txt.
+      - `tail -n 15 file.txt` This displays the last 15 lines of file.txt.
+      - `tail -n 20 -f /var/log/syslog` Combine -f with -n to View Specific Lines and Follow, This displays the last 20 lines of the file and continues to follow it
+     
 
 
 
