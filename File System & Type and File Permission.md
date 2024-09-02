@@ -1,1 +1,40 @@
+# File System and file type and file Permission 
+---------------
 
+## File Systema and file type
+ 
+
+1. **File SystemI**
+
+  - `Root Directory (/)`The top-level directory in the Linux file system. All other directories and files are contained within it.
+  - `Directories` Directories are equivalent to "folders" in other operating systems. They are containers that can hold files and other directories.
+  - `Files` Everything in Linux is considered a file, including text files, executables, devices, and even directories.
+  - Paths:
+      - `Absolute Path` A path that starts from the root directory (/). For example, /home/user/docs/file.txt.
+      - `Relative Path` A path that is relative to the current working directory. For example, if you're in "/home/user", the relative path to "docs/file.txt" would be "docs/file.txt."
+
+  - File Types:
+      - `Regular files` These are the most common files, including text, binaries, images, etc.
+      - `Directories` Special files that can contain other files and directories.
+      - `Symbolic Links` Pointers to other files or directories.
+      - `Device files` Special files that represent hardware devices, such as /dev/sda for a hard drive.
+  - Mount Points:
+    - In Linux, different file systems can be mounted at specific directories called mount points. For example, a separate file system for the '/home' directory can be mounted at '/home'.
+      The `mount` command is used to mount file systems.
+
+-**Directory structure if linux file System**
+  - `/bin` Contains essential user command binaries, such as ls, cp, mv, etc.
+  - `/boot` Contains boot loader configuration and executable files needed to start a Linux computer, including the Linux kernel.
+  - `/dev` Contains device filesfor all hardware devices connected to the system.
+  - `/etc` Contains system configuration files. and the local system configuration files for the host system.
+  - `/home` Contains the home directories of users.
+  - `/lib` Contains shared libraries needed by the binaries in /bin and /sbin. and 
+  - `/mnt` and /media` Used for mounting filesystems like USB drives, CD-ROMs, etc.
+  - `/opt` Contains optional software packages.
+  - `/proc` A virtual filesystem that contains information about running processes and the system.
+  - `/root` The home directory of the root user.
+  - `/run` Contains runtime data for processes started since the last boot.
+  - `/sbin` Contains essential system binaries, typically only used by the root user.
+  - `/tmp` A directory for temporary files.
+  - `/usr` Contains user-installed software and libraries. It's often large and contains subdirectories like '/usr/bin' for binaries, '/usr/lib' for libraries, and '/usr/share' for shared data.
+  - `/var` Contains variable data like logs, databases, and spool files.
