@@ -326,7 +326,19 @@ $ top -d 5 This command refreshes the top display every 5 seconds.
       filesystems. It help you ubderstand how much space is used and how much is available on each partition on file system.
     1. `df -h` Displays the output in a human-readable format (e.g., KB, MB, GB).
     2. `df -T`  Displays the type of each filesystem
-    3. 
+    3. `df -i` Displays inode usage instead of block usage.
+     
+- "Check Disk Space": Determine how much space is available on your filesystems.
+- "Monitor Disk Usage": Keep track of disk usage to prevent full disks that can cause system issues.
+
+  **du command**
+
+  - `du` command estimates and displays the disk space used by indivisual files and directories. This will display the disk usage of the current directory and all its subdirectories.
+      1. `du -h` Displays the output in a human-readable format.
+      2. `du -ah` Displays disk usage for all files, not just directories
+  - "Identify Large Files or Directories" Use du to find out which files or directories are consuming the most space.
+  - "Disk Space Management" Helps in managing disk space by identifying and cleaning up large, unnecessary files.
+          
 
   ## init ?
   - `init` is the traditional initialization system that is responsible for booting the system, managing services, and maintaining system states. It is the first process started by the 
