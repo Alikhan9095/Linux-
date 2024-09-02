@@ -370,6 +370,11 @@ $ top -d 5 This command refreshes the top display every 5 seconds.
       2. `du -ah` Displays disk usage for all files, not just directories
   - "Identify Large Files or Directories" Use du to find out which files or directories are consuming the most space.
   - "Disk Space Management" Helps in managing disk space by identifying and cleaning up large, unnecessary files.
+
+## Search and find commnds( grep,awk,find,locate,sort,head,tail)
+
+ ****grep command****
+
           
 
   
