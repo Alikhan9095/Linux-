@@ -27,6 +27,38 @@
        
        $ ls -lh /home/user: Lists files in /home/user with detailed information and human-readable file sizes.
        $ ls -aR: Lists all files, including hidden ones, recursively in all subdirectories.
+
+## init ?
+
+  - `init` is the traditional initialization system that is responsible for booting the system, managing services, and maintaining 
+           system states. It is the first process started by the 
+           kernel and has a `process ID (PID) of 1`.
+     1. System Initialization: It initializes the system, sets up the environment, and starts other essential processes.
+     2. Service Management: It manages and starts system services and processes according to the system’s runlevel.
+    
+  **Runlevels**
+  -  Runlevels define the state of the system (e.g., single-user mode, multi-user mode). Each runlevel corresponds to a different set of 
+     services and system states.
+  -  Common runlevels include:
+   1. 0: Halt (shutdown)
+   2. 1: Single-user mode (for maintenance)
+   3. 2-5: Multi-user modes (with or without GUI)
+   4  6: Reboot
+
+   - `/etc/init.d/` Directory containing scripts for starting and stopping services in the traditional SysV init system.
+   - `/etc/rc.d/ or /etc/rcX.d/` Directories containing symbolic links to the init scripts for each runlevel.
+
+
+      > Example
+  ```
+     init <runlevel> To change the system runlevel, use the init command followed by the desired runlevel:
+     $ init 3, This command changes the system to runlevel 3 (multi-user mode with networking).
+     $ init 6, This command reboots the system.
+     $ init 0, This command shuts down the system.
+  ```
+    
+
+       
        
  ## cat command
 - `cat` command in Linux is used to concatenate and display the contents of files.
@@ -340,30 +372,7 @@ $ top -d 5 This command refreshes the top display every 5 seconds.
   - "Disk Space Management" Helps in managing disk space by identifying and cleaning up large, unnecessary files.
           
 
-  ## init ?
-  - `init` is the traditional initialization system that is responsible for booting the system, managing services, and maintaining system states. It is the first process started by the 
-           kernel and has a `process ID (PID) of 1`.
-     1. System Initialization: It initializes the system, sets up the environment, and starts other essential processes.
-     2. Service Management: It manages and starts system services and processes according to the system’s runlevel.
-    
-  **Runlevels**
-  -  Runlevels define the state of the system (e.g., single-user mode, multi-user mode). Each runlevel corresponds to a different set of services and system states.
-  -  Common runlevels include:
-   1. 0: Halt (shutdown)
-   2. 1: Single-user mode (for maintenance)
-   3. 2-5: Multi-user modes (with or without GUI)
-   4  6: Reboot
-
-   - `/etc/init.d/` Directory containing scripts for starting and stopping services in the traditional SysV init system.
-   - `/etc/rc.d/ or /etc/rcX.d/` Directories containing symbolic links to the init scripts for each runlevel.
-
-     > Example
-  ```
-     init <runlevel> To change the system runlevel, use the init command followed by the desired runlevel:
-     $ init 3, This command changes the system to runlevel 3 (multi-user mode with networking).
-     $ init 6, This command reboots the system.
-     $ init 0, This command shuts down the system.
-  ```
+  
 
 
 
