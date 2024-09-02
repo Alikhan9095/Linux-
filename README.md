@@ -373,8 +373,95 @@ $ top -d 5 This command refreshes the top display every 5 seconds.
 
 ## Search and find commnds( grep,awk,find,locate,sort,head,tail)
 
- ****grep command****
+1. ****grep command****
+     
+  - `grep` command in Linux is a powerful tool used to search for a specific pattern of text within files or output. It's often used for filtering and searching through text files, log 
+       files, and command output, widely used for searching and filtering text. Whether you're parsing log files, filtering command output, or searching within code, grep is an 
+       essential command for efficient text processing.
+      - `grep [options] pattern [file...]` **"pattern"** The string or regular expression you want to search for in the "file" The file(s) in which to search for the pattern.
+      - `grep -i "pattern" file.txt` "i" Ignore case (search is case-insensitive).
+      - `grep -o "pattern" file.txt`, **"-o"** Show only the matching part of the lines.
+      - `grep -r "pattern" /path/to/directory/` **"r or -R"** Recursively search through directories.
+      - `grep -v "pattern" file.txt`, **"v"** Invert the match (shows lines that do not match the pattern).
+      - `grep -n "pattern" file.txt`, **"n"** Show line numbers along with matching lines.
+      - `grep -l "pattern" *.txt`. **"l"** List only the names of files containing the matching lines.
+      - `grep -c "pattern" file.txt` **"-c"** Count the number of matching lines.
+      - `grep -w "pattern" file.txt`, **"w"** Match whole words only.
 
+> Example
+```
+$ grep -i "error" /var/log/syslog, This searches for "error" regardless of case specific word,Search for a Word, Case Insensitive.
+$ grep "error" *.log, Search for a Pattern in Multiple Files This searches for "error" in all .log files in the current directory.
+$ grep "^pattern" file.txt, Search for lines starting with a pattern
+$ grep "pattern$" file.txt, Search for lines ending with a pattern
+$ grep "[a-z]" file.txt, Search for lines containing a specific range of characters:
+```
+ 
+****awk command****    
+
+- `awk` command in Linux is a powerful text-processing tool used for pattern scanning and processing. It's particularly useful for extracting and manipulating data from text files and 
+        streams.
+    - "Scanning files" The command can scan files line by line
+    - "Pattern searching" It can search for a particular text or pattern in a file.
+    - `awk 'pattern {action}' file`, "pattern"A condition to match, often based on regular expressions, "action" The operation to perform on lines matching the pattern. If no action is 
+       specified, awk prints the matched lines by default."file" The file or input stream to process.
+    - `awk -F: '{print $1}' /etc/passwd` Specifies the field separator,This prints the first field from each line of /etc/passwd, where fields are separated by ':'.
+    -  `awk '{print $1, $3}' file.txt` Print Specific Columns, This prints the first and third fields from each line of file.txt, Fields are referenced by $1, $2, ..., $n, where $1 is 
+                                      the first field, $2 is the second, and so on. $0 represents the entire line.
+    - `awk -F, '{print $1, $3}' file.csv` Use a Different Field Separator, This specifies a comma as the field separator and prints the first and third columns from a CSV file.
+    - `awk '/error/ {print $0}' /var/log/syslog`, Print Lines Matching a Pattern, This prints all lines containing the word "error" in the /var/log/syslog file.
+
+   ****find command****
+
+  - `find` command in Linux is a powerful tool used for searching and locating files and directories within a directory hierarchy. It offers a wide range of options for specifying 
+          criteria like name, size, modification time, permissions, and more.
+       - `find [path] [options] [expression]` "path" The directory in which to start the search. If omitted, find starts in the current directory, options: Flags and options that modify 
+                      the behavior of the search. expression: Conditions to match files or directories. This can include name patterns, size conditions, time conditions, and more.
+       - `find /path/to/search -name "filename"` This searches for a file named filename in /path/to/search. The search is case-sensitive.
+
+ ****sort command****  
+ - `sort` command in Linux is used to sort lines of text files. It can sort data numerically, alphabetically, and in reverse order, among other options. The command is highly versatile 
+         and can handle a wide range of sorting tasks
+   - `sort [options] [file...]`, options: Flags that modify the behavior of the sort, file: The file(s) to sort. If no file is specified, sort reads from standard input.
+   - `sort file.txt` , This sorts the lines in file.txt alphabetically in ascending order (A-Z).
+   - `sort -n file.txt` This sorts the lines in file.txt numerically (1, 2, 10, 20, ...). This is useful when dealing with numbers
+   - `sort -r file.txt` This sorts the lines in file.txt in reverse order (Z-A or descending numbers).
+   - `sort -u file.txt` This sorts the lines and removes any duplicates, leaving only unique lines.
+   - `sort -f file.txt` se-Insensitive, This sorts the lines without considering case differences (e.g., "apple" and "Apple" are treated the same).
+
+  ****head & tail commands****  
+  The `head` and `tail` commands in Linux are used to display the beginning and the end of a file, respectively. These commands are useful for quickly viewing the first or last few 
+ lines of a file without opening the entire file.
+
+  **head command**
+  - `head` command outputs the first part of files. By default, it displays the first 10 lines of each file, used to quickly view the beginning.
+     - `head [options] [file...]` file: The file to display. If no file is specified, head reads from standard input
+     - `head file.txt` This displays the first 10 lines of file.txt.
+     - `head -n 20 file.txt` This displays the first 20 lines of file.txt.
+
+ **tail command**
+ - `tail` command outputs the last part of files. By default, it displays the last 10 lines of each file. and used for monitoring logs or checking the most recent additions to a file.
+    - `tail [options] [file...]` file: The file to display. If no file is specified, tail reads from standard input.
+    - `tail file.txt` This displays the last 10 lines of file.txt.
+    - `tail -n 15 file.txt` This displays the last 15 lines of file.txt.
+    - `tail -n 20 -f /var/log/syslog` Combine -f with -n to View Specific Lines and Follow, This displays the last 20 lines of the file and continues to follow it
+    - 
+
+
+
+
+
+
+
+
+  
+
+
+
+
+          
+
+    
           
 
   
