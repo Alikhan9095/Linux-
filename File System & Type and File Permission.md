@@ -56,10 +56,10 @@
     `XFS`, `btrfs`, 
     and swap.
    1. ext (Extended File System), ext2, ext3,ext4
-   - `Ext4` file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state 
+    - `Ext4` file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state 
       drive) disks, and it is the default file system in Linux distribution.
-   - `XFS` File System was considered as high-speed JFS, which is developed for parallel I/O processing.
-   - `Btrfs` stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage 
+    - `XFS` File System was considered as high-speed JFS, which is developed for parallel I/O processing.
+   2. `Btrfs` stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage 
       configuration, and more.
      
    > **Create file system type**
@@ -68,8 +68,8 @@
      $ sudo mount /dev/sdX1 /mnt/ext4_partition, Mounting an Ext4 file system:
      $ df -hT /mnt/ext4_partition, Checking the file system’s disk usage:
      ```
-   2. **Btrfs (B-Tree File System)**
-      - `Btrfa` Btrfs is a modern, advanced file system designed to address the limitations of older file systems
+   3. **Btrfs (B-Tree File System)**
+     - `Btrfa` Btrfs is a modern, advanced file system designed to address the limitations of older file systems
      
    > **Create file**
      ```
@@ -78,7 +78,7 @@
      $ sudo btrfs subvolume create /mnt/btrfs_partition/subvol1, Creating a Btrfs subvolume:
      $ sudo btrfs subvolume snapshot /mnt/btrfs_partition/subvol1 /mnt/btrfs_partition/snapshot1, Taking a snapshot of a Btrfs subvolume
      ```
-  3. XFS (XFS File System)
+   4. XFS (XFS File System)
      - `XFS` is a high-performance, journaling file system that excels in handling large files and massive storage volumes.
     
  >  **Create file**
@@ -89,7 +89,7 @@
     ```
 
   
-3. **File permisssion**
+# **File permisssion**
 
    - **File Permission Basics**
        - `Read (r)` Permission to read the contents of the file or list the contents of a directory.
@@ -115,8 +115,8 @@
        $ chmod 755 file.tx, set permissions by octal form by useinf 4,2,1=7 for full permissions,
       ```
   - ****Changing Ownership****
-      - `chown` You can change the owner and group of a file using this command.
-      - "hange owner" chown newowner file.txt
+      - `chown` command is use for  change the owner and group of a file.
+      - "Change owner" chown newowner file.txt
       - "Change group" chown :newgroup file.txt
       - "Change both owner and group" chown newowner:newgroup file.txt
 
