@@ -56,37 +56,37 @@
     `XFS`, `btrfs`, 
     and swap.
    1. ext (Extended File System), ext2, ext3,ext4
-    - `Ext4` file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state 
-      drive) disks, and it is the default file system in Linux distribution.
-    - `XFS` File System was considered as high-speed JFS, which is developed for parallel I/O processing.
-   2. `Btrfs` stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage 
-      configuration, and more.
+      - `Ext4` file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid- 
+               state drive) disks, and it is the default file system in Linux distribution.
+      - `XFS` File System was considered as high-speed JFS, which is developed for parallel I/O processing.
+      - `Btrfs` stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage 
+                configuration, and more.
      
    > **Create file system type**
-     ```
+   ```
      $ sudo mkfs.ext4 /dev/sdX1, Creating a new Ext4 file system on a partition:
      $ sudo mount /dev/sdX1 /mnt/ext4_partition, Mounting an Ext4 file system:
      $ df -hT /mnt/ext4_partition, Checking the file system’s disk usage:
-     ```
-   3. **Btrfs (B-Tree File System)**
-     - `Btrfa` Btrfs is a modern, advanced file system designed to address the limitations of older file systems
+   ```
+   2. **Btrfs (B-Tree File System)**
+       - `Btrfa` Btrfs is a modern, advanced file system designed to address the limitations of older file systems
      
    > **Create file**
-     ```
+   ```
      $ sudo mkfs.btrfs /dev/sdX1, Creating a new Btrfs file system on a partition:
      $ sudo mount /dev/sdX1 /mnt/btrfs_partition, Mounting a Btrfs file system:
      $ sudo btrfs subvolume create /mnt/btrfs_partition/subvol1, Creating a Btrfs subvolume:
      $ sudo btrfs subvolume snapshot /mnt/btrfs_partition/subvol1 /mnt/btrfs_partition/snapshot1, Taking a snapshot of a Btrfs subvolume
-     ```
-   4. XFS (XFS File System)
-     - `XFS` is a high-performance, journaling file system that excels in handling large files and massive storage volumes.
+   ```
+   3. XFS (XFS File System)
+       - `XFS` is a high-performance, journaling file system that excels in handling large files and massive storage volumes.
     
  >  **Create file**
-     ```
+   ```
      $ sudo mkfs.xfs /dev/sdX1, Creating a new XFS file system on a partition:
      $ sudo mount /dev/sdX1 /mnt/xfs_partition, Mounting an XFS file system:
      $ df -hT /mnt/xfs_partition, Checking the file system’s disk usage:
-    ```
+   ```
 
   
 # **File permisssion**
@@ -121,6 +121,19 @@
       - "Change both owner and group" chown newowner:newgroup file.txt
 
     > Example
+    ```
+     $ chmod 755 script.sh, Grant all permissions to the owner, and read and execute to group and others:
+     $ chmod o-w file.txt, Revoke write permissions from others:
+     $ chmod u+x file.sh, Make a file executable by the owner only:
+     $ chown new-owner-name:new-group-name file.txt, chnage the owner and group of a file
+    ```
+
+##  **Special permission Sticky bit(setuid and setgid)**  
+  - `Sticky bit` The sticky bit is a special type of permissions used in unix and Linux OS's.
+  - It is typically set on a directory to prevent user form deleting and renaming file within that directory unless they are owner of 
+    the fiel  
+
+
           
         
 
