@@ -120,7 +120,7 @@
       - "Change group" chown :newgroup file.txt
       - "Change both owner and group" chown newowner:newgroup file.txt
 
-    > Example
+    > Example 
     ```
      $ chmod 755 script.sh, Grant all permissions to the owner, and read and execute to group and others:
      $ chmod o-w file.txt, Revoke write permissions from others:
@@ -128,10 +128,13 @@
      $ chown new-owner-name:new-group-name file.txt, chnage the owner and group of a file
     ```
 
-##  **Special permission Sticky bit(setuid and setgid)**  
-  - `Sticky bit` The sticky bit is a special type of permissions used in unix and Linux OS's.
-  - It is typically set on a directory to prevent user form deleting and renaming file within that directory unless they are owner of 
-    the fiel  
+##  **Special permission Sticky bit(10, setuid(4) and setgid(2)**  
+   - `setuid` When set on a file, it allows users to run the file with the permissions of the file owner.
+   - `setgid` When set on a directory, newly created files within the directory inherit the group of the directory.
+   - `Sticky bit` The sticky bit is a special type of permissions used in unix and Linux OS's. When set on a directory, it allows only 
+      the owner of a file to delete or rename the files within the directory. and prevent from other user's to delet and rename.
+     
+  
 
 
           
