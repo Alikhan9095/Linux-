@@ -35,6 +35,131 @@
   - `/root` The home directory of the root user.
   - `/run` Contains runtime data for processes started since the last boot.
   - `/sbin` Contains essential system binaries, typically only used by the root user.
-  - `/tmp` A directory for temporary files.
-  - `/usr` Contains user-installed software and libraries. It's often large and contains subdirectories like '/usr/bin' for binaries, '/usr/lib' for libraries, and '/usr/share' for shared data.
+  - `/tmp` A directory for temporary files. users may temporarily store files here. Remember that files may be removed without prior 
+           notice at any time in this directory.
+  - `/usr` Contains user-installed software and libraries. It's often large and contains subdirectories like '/usr/bin' for binaries, 
+            '/usr/lib' for libraries, and '/usr/share' for shared data.
   - `/var` Contains variable data like logs, databases, and spool files.
+
+> **Important File System Commands**
+  - `df` Displays disk space usage of file systems.
+  - `du` Shows the disk usage of files and directories.
+  - `mount` Mounts a file system.
+  - `umount` Unmounts a file system.
+  - `fsck` Checks and repairs a file system.
+  - `mkfs` Used to create a new file system on a disk partition.
+  - `lsblk` Lists information about block devices.
+  - `blkid` Prints the UUIDs and labels of file systems.
+
+2. **Types of Linux file system**
+    When we install the Linux operating system, Linux offers many file systems such as `Ext`, `Ext2`, `Ext3`, `Ext4`, `JFS`, `ReiserFS`, 
+    `XFS`, `btrfs`, 
+    and swap.
+   1. ext (Extended File System), ext2, ext3,ext4
+   - `Ext4` file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state 
+      drive) disks, and it is the default file system in Linux distribution.
+   - `XFS` File System was considered as high-speed JFS, which is developed for parallel I/O processing.
+   - `Btrfs` stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage 
+      configuration, and more.
+     
+   > **Create file system type**
+     ```
+     $ sudo mkfs.ext4 /dev/sdX1, Creating a new Ext4 file system on a partition:
+     $ sudo mount /dev/sdX1 /mnt/ext4_partition, Mounting an Ext4 file system:
+     $ df -hT /mnt/ext4_partition, Checking the file system’s disk usage:
+     ```
+   2. **Btrfs (B-Tree File System)**
+      - `Btrfa` Btrfs is a modern, advanced file system designed to address the limitations of older file systems
+     
+   > **Create file**
+     ```
+     $ sudo mkfs.btrfs /dev/sdX1, Creating a new Btrfs file system on a partition:
+     $ sudo mount /dev/sdX1 /mnt/btrfs_partition, Mounting a Btrfs file system:
+     $ sudo btrfs subvolume create /mnt/btrfs_partition/subvol1, Creating a Btrfs subvolume:
+     $ sudo btrfs subvolume snapshot /mnt/btrfs_partition/subvol1 /mnt/btrfs_partition/snapshot1, Taking a snapshot of a Btrfs subvolume
+     ```
+  3. XFS (XFS File System)
+     - `XFS` is a high-performance, journaling file system that excels in handling large files and massive storage volumes.
+    
+ >  **Create file**
+     ```
+     $ sudo mkfs.xfs /dev/sdX1, Creating a new XFS file system on a partition:
+     $ sudo mount /dev/sdX1 /mnt/xfs_partition, Mounting an XFS file system:
+     $ df -hT /mnt/xfs_partition, Checking the file system’s disk usage:
+    ```
+
+  
+3. **File permisssion**
+
+   - **File Permission Basics**
+       - `Read (r)` Permission to read the contents of the file or list the contents of a directory.
+       - `Write (w)` Permission to modify the contents of the file or make changes within a directory (e.g., create or delete files).
+       - `Execute (x)` Permission to execute a file (if it’s a script or binary) or enter a directory.
+       - `Owner` The user who owns the file.
+       - `Group` The group that owns the file. Multiple users can belong to this group.
+       - `Others` All other users on the system.
+     - Numeric Representation of Permissions
+        - Read (r): 4
+        - Write (w): 2
+        - Execute (x): 1
+
+      > **Changing Permissions**
+        - `chmod` command is use for set the permission for  owner, group, other, read,write,execute.
+
+    > Example
+      ```
+       $ ls -ls or ll or ls -h etc, check the permission 
+       $ chmod u+x file.txt,  Add execute permission for the owner
+       $ chmod g-w file.txt, Remove write permission for the group)
+       $ chmod o=rx file.txt, Set read and execute permissions for others
+       $ chmod 755 file.tx, set permissions by octal form by useinf 4,2,1=7 for full permissions,
+      ```
+  - ****Changing Ownership****
+      - `chown` You can change the owner and group of a file using this command.
+      - "hange owner" chown newowner file.txt
+      - "Change group" chown :newgroup file.txt
+      - "Change both owner and group" chown newowner:newgroup file.txt
+
+    > Example
+          
+        
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
