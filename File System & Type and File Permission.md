@@ -184,7 +184,112 @@
      file’s group, rather than their own group ID.
    - `On Directories` When the setgid bit is set on a directory, all files and subdirectories created within it inherit the group 
      ownership of the directory, instead of the primary group of the user who created them.
-   - When the setgid bit is set, the group's execute permission (second set of three permissions) will have an s instead of an x   
+   - When the setgid bit is set, the group's execute permission (second set of three permissions) will have an s instead of an x
+   - `chmod g+s filename` , To set the setgid bit on a file
+   - `chmod 2755 filename` , Numeric method (use 2 in front of the usual permission digits)
+   - `chmod g-s filename` , Removing the Setgid Bit
+   - `chmod 0755 filename` remove by Numeric method.
+
+> Example
+```
+ $ mkdir shared_directory, create a directory
+ $ chown root:staff shared_directory, set group ownership
+ $ chmod g+s shared_directory, Set the setgid bit
+ $ ls -ld shared_directory, verify
+ $ drwxrwsr-x 2 root staff 4096 Aug 30 12:00 shared_directory
+ $ chmod 2755 filename, Numeric method (use 2 in front of the usual permission digits
+ $ chmod g-s filename, Remove the  the setgid bit
+ $ chmod 0755 filename, Remove the  the setgid bit by numeric method
+```
+
+## ACL (Access control list) permission
+  - `ACl` It's special type of permissions, an ACL let you assing permissions for each unique user or group. suppose user1,user2, and 
+     user3 on a system you must assing this permission to the directory, user1 can read and write permission.
+  - With ACLs, you can set permissions for multiple users or groups, providing flexibility in how access is controlled.
+  - Standard Permissions: In Linux, each file or directory has standard permissions for three entities—owner, group, and others. 
+    However, with ACL, you can grant specific permissions to additional users or groups.
+  - ACLs consist of entries that define the permissions for users or groups. You can have separate ACL entries for different users or 
+    groups, allowing them distinct permissions (read, write, execute) on a file or directory  
+  - Types of ACL Entries
+    - User ACL: Permissions for individual users.
+    - Group ACL: Permissions for individual groups.
+    - Mask: Defines the maximum allowed permissions for users and groups.
+    - Other: Same as the default Linux permission for others
+  - `getfacl filename`, To view the ACLs set on a file or directory, use the getfacl command
+  - `setfacl -m u:username:permissions filename` To set an ACL on a file or directory, use the setfacl command.
+  - `setfacl -m g:groupname:permissions filename` Set ACL for a group
+  - `setfacl -m d:u:username:permissions directoryname` ,Set default ACL for a directory: (for future files created within the directory)
+  - `setfacl -x u:username filename`, To remove an ACL entry
+  - `setfacl -b filename` To remove all ACLs from a file.
+  - If the file has ACLs, a + symbol will appear at the end of the permission string.
+  - `setfacl -x g:groupname filename`, to remove ACL from group
+
+> Example
+```
+ $ $ ls -l myfile.txt
+ $ -rw-rw-r--+ 1 user1 group1 4096 Aug 30 12:00 myfile.txt
+ $ mkdir /shared,Create a shared directory:
+ $ chmod 770 /shared, set permission 
+ $ setfacl -m u:john:rwx /shared, Grant additional users specific access with ACL, This grants user john read,write,execute permission.
+ $ getfacl /shared, View the ACL.
+ $ setfacl -m g:groupname:permissions filename, set ACL for group
+ $ setfacl -x u:username filename
+ $ setfacl -b filename  # Remove all ACLs
+```
+
+4. **chattr (change attribute) command**
+ - `chattr` command in Linux is used to change the attributes(set/unset) of files or directories on a file system.to secure accidental 
+    deletion on modification of important files and folders even though you are logged in as root user.
+ - Common File Attributes with `chattr`
+     - `i` (Immutable): Once this attribute is set, the file cannot be modified, deleted, renamed, or even written to.
+     - `a` (Append-only): The file can only be opened in append mode for writing. This means data can be added to the file, but the  
+           existing content cannot be modified or deleted.
+     - `e` (Extents): This attribute indicates that the file is using extents for mapping the blocks on disk. This is a default behavior 
+           for modern file systems.
+     - `A` (No Atime Updates): When set, the access time (atime) of the file is not updated, which can help in improving performance for 
+           frequently read files.
+     - `S` (Synchronous Updates): Ensures that all file modifications are written synchronously on the disk.
+
+  - `chattr [operator][attributes] [filename]` Syntax of chattr
+  - Operator
+      - '+' to add an attribute.
+      - '-' to remove an attribute.
+      - '=' to set the attribute exactly as specified.
+        
+  - `sudo chattr +i important_file.txt`. protect a file from being modified or deleted, you can set the immutable bit using the +i flag
+  - `sudo chattr -i important_file.txt` To remove the immutable bit
+  - `sudo chattr +a logfile.txt` to use that existing content is not accidentally overwritten, but new data can still be appended.
+  - `sudo chattr -a logfile.txt` To remove the append-only bit
+  - `sudo chattr +A filename`  Disable Access Time Updates
+  - `lsattr filename` Viewing File Attributes with lsattr
+  - 
+
+
+
+
+
+    
+     
+
+
+
+ 
+
+
+ 
+    
+
+
+
+
+
+    
+
+     
+
+     
+
+     
 
 
         
