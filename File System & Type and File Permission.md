@@ -237,7 +237,7 @@
  $ setfacl -b filename  # Remove all ACLs
 ```
 
-4. **chattr (change attribute) command**
+## **chattr (change attribute) command**
  - `chattr` command in Linux is used to change the attributes(set/unset) of files or directories on a file system.to secure accidental 
     deletion on modification of important files and folders even though you are logged in as root user.
  - Common File Attributes with `chattr`
@@ -262,7 +262,6 @@
   - `sudo chattr -a logfile.txt` To remove the append-only bit
   - `sudo chattr +A filename`  Disable Access Time Updates
   - `lsattr filename` Viewing File Attributes with lsattr
-  - 
 
 
 
