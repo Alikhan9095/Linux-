@@ -128,16 +128,65 @@
      $ chown new-owner-name:new-group-name file.txt, chnage the owner and group of a file
     ```
 
-##  **Special permission Sticky bit(10, setuid(4) and setgid(2)**  
+##  **Special permission Sticky bit(1), setuid(4) and setgid(2)**  
    - `setuid` When set on a file, it allows users to run the file with the permissions of the file owner.
    - `setgid` When set on a directory, newly created files within the directory inherit the group of the directory.
    - `Sticky bit` The sticky bit is a special type of permissions used in unix and Linux OS's. When set on a directory, it allows only 
       the owner of a file to delete or rename the files within the directory. and prevent from other user's to delet and rename.
      
   
+1. **Sticky Bit **
+  - It's represent by 't' (Meaning x is also there), and 'T' reprent when there is no 'x' for other ( where x=execure)
+  - Users can create and edit their own files in the directory, Only the owner of a file, the owner of the directory, or the root user 
+    can delete or rename files in that directory,Other users with write access to the directory cannot delete or rename files they do 
+    not own.
+  - ` chmod +t /shared` , set the sticky bit on a directory 
+  - ` chmod -t /shared` , Remove the sticky bit from a directory 
+  -  `chmod 1777 /directory_name`, Numeric method (use 1 in front of the usual permission digits)
+
+> Example
+ ```
+  $ chmod +t /shared, set the sticky bit on a directory 
+  $ ls -ld /shared, check sticky bit is set or not
+  $ drwxrwxrwt 2 root root 4096 Aug 30 10:00 /shared
+  $ chmod -t /directory_name, Remove sticky bit
+  $ chmod 1777 /directory_name, Numeric method (use 1 in front of the usual permission digits): 
+  $ chmod 0777 /directory_name, Rmove sticky using numeric method
+ ```
+
+2. **setuid(4) permission**
+   - `setuid` (Set User ID) When set on a file, it allows users to run the file with the permissions of the file owner.
+   - When the setuid bit is set, the file runs with the permissions of the file's owner (e.g., root), rather than the user who launched 
+    the program.The 'setuid bit' is represented by an s in the owner's execute permission field when viewing permissions.
+   - It’s represented by an `s` in the owner’s execute field.
+   - Numeric method (use 4 in front of the usual permission digits).
+   - `chmod u+s filename`, set the setuid bit on a file using the chmod command:
+   - `chmod 4755 filename`, Numeric method (use 4 in front of the usual permission digits
+   - `chmod u-s filename`, remove setuid by notmal
+   - `chmod 0755 filename`, remove setuid by numeric method
+
+> Example
+ ```
+  $ touch myscript.sh, create new file with .sh extension
+  $ chmod +x myscript.sh, make the full permission to the owner of the file.
+  $ chmod u+s myscript.sh, setuid on file
+  $ ls -l myscript.sh,      Verify the permission
+  $ -rwsr-xr-x 1 user user 0 Aug 30 10:00 myscript.sh     
+  $ chmod u-s filename, Remove the setuid
+  $ chmod 4755 filename, Numeric method (use 4 in front of the usual permission digits).
+  $ chmod 0755 filename, Remove setuid by numeric method
+ ```
+
+3. **setgid permission**
+   - `Setgid` (Set Group ID) is a special permission in Linux that can be applied to both files and directories. When the setgid bit is 
+      set on a file or directory, it affects how group ownership is handled.
+   - `On Files` When the setgid bit is set on an executable file, any user who executes the file temporarily assumes the group ID of the 
+     file’s group, rather than their own group ID.
+   - `On Directories` When the setgid bit is set on a directory, all files and subdirectories created within it inherit the group 
+     ownership of the directory, instead of the primary group of the user who created them.
+   - When the setgid bit is set, the group's execute permission (second set of three permissions) will have an s instead of an x   
 
 
-          
         
 
          
