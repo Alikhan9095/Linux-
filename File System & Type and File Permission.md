@@ -1,7 +1,7 @@
 # File System and file type and file Permission 
 ---------------
 
-## File Systema and file type
+## File System and file type
  
 
 1. **File SystemI**
